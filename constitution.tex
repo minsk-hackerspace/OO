@@ -16,9 +16,10 @@
 \setlist[itemize,1]{label=---}
 
 \setkomafont{section}{\sffamily \large}
+\setkomafont{title}{\rmfamily \huge}
 
-\date{Минск, 2012}
-\title{Устав Общественного объединения «Открытая лаборатория технического творчества»}
+\newcommand{\longpage}{\enlargethispage{\baselineskip}}
+\newcommand{\shortpage}{\enlargethispage{-\baselineskip}}
 
 % deep magic follows, don't touch it!
 \makeatletter
@@ -52,6 +53,8 @@
   \let\par=\old@@par
 }
 
+\def\emph{\textbf}
+
 \let\@@@section=\section
 \renewcommand\section[1]{\@@@section{\MakeUppercase{#1}}}
 % end of magic
@@ -61,6 +64,33 @@
 
 \sloppy
 \begin{document}
+
+\setkomafont{title}{\bfseries}
+
+\date{\large г. Минск\\2012}
+
+\titlehead{\raggedleft \begin{minipage}{15em}%
+ПРИНЯТ\\%
+Учредительной конференцией\\%
+Общественного объединения\\%
+«Открытая лаборатория\\%
+технического творчества»\\%
+00.00.2012%%
+\end{minipage}}
+
+\title{\Large%
+УСТАВ\\%
+\textbf{\large Общественного объединения}\\%
+«Открытая лаборатория технического творчества»\\[1ex]%
+(ОО «Открытая лаборатория\\%
+технического творчества»)\\[4ex]%
+СТАТУТ\\%
+\textbf{\large Грамадскага аб'яднання}\\%
+«Адкрытая лабараторыя тэхнічнай творчасці»\\[1ex]%
+(ГА «Адкрытая лабараторыя\\%
+тэхнічнай творчасці»)%
+}
+\maketitle
 
 \section{Общие положения}
 

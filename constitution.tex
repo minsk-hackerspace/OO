@@ -15,9 +15,9 @@
 %\setlist[itemize]{leftmargin=*}
 \setlist[itemize,1]{label=---}
 
-\setkomafont{section}{\sffamily \large}
-\setkomafont{paragraph}{\normalfont \bfseries}
-\setkomafont{subparagraph}{\normalfont \bfseries}
+\setkomafont{section}{\normalfont}
+\setkomafont{paragraph}{\normalfont}
+\setkomafont{subparagraph}{\normalfont}
 \setkomafont{title}{\rmfamily \huge}
 
 \newcommand{\longpage}{\enlargethispage{\baselineskip}}
@@ -59,6 +59,7 @@
 
 \def\emph{\textbf}
 
+\renewcommand\thesection{\arabic{section}.}
 \let\@@@section=\section
 \renewcommand\section[1]{\@@@section{\MakeUppercase{#1}}}
 % end of magic

@@ -16,6 +16,8 @@
 \setlist[itemize,1]{label=---}
 
 \setkomafont{section}{\sffamily \large}
+\setkomafont{paragraph}{\normalfont \bfseries}
+\setkomafont{subparagraph}{\normalfont \bfseries}
 \setkomafont{title}{\rmfamily \huge}
 
 \newcommand{\longpage}{\enlargethispage{\baselineskip}}
@@ -27,7 +29,7 @@
 \@newctr{subparagraph}[paragraph]
 \newenvironment{numberedpars}{%
   \addtocounter{secnumdepth}{1}
-  \renewcommand\theparagraph{\arabic{section}.\arabic{paragraph}}
+  \renewcommand\theparagraph{\arabic{section}.\arabic{paragraph}.}
   \renewcommand\@seccntformat[1]
   {\expandafter\ifx\csname##1\endcsname\paragraph\csname 
   the##1\endcsname\else\csname the##1\endcsname\quad\fi}
@@ -40,7 +42,7 @@
 }
 \newenvironment{numberedsubpars}{%
   \addtocounter{secnumdepth}{1}
-  \renewcommand\thesubparagraph{\arabic{section}.\arabic{paragraph}.\arabic{subparagraph}}
+  \renewcommand\thesubparagraph{\arabic{section}.\arabic{paragraph}.\arabic{subparagraph}.}
   \renewcommand\@seccntformat[1]
   {\expandafter\ifx\csname##1\endcsname\subparagraph\csname 
   the##1\endcsname\else\csname the##1\endcsname\quad\fi}

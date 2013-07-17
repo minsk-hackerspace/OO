@@ -12,6 +12,6 @@ SRC := $(wildcard *.tex)
 all: $(SRC:.tex=.pdf)
 
 clean:
-	rm -f *.pdf *.log *.aux
+	rm -f *.pdf *.log *.aux *.dvi *.ps
 
 remake: clean all

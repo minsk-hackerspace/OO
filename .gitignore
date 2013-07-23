@@ -1,4 +1,6 @@
 
+*.out
+*.toc
 *.dvi
 *.ps
 *.pdf

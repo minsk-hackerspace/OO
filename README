@@ -1,9 +1,14 @@
-constitution - устав
 
-association_application - заявление о гос. регистрации объединения
 
-member_application - заявление на прием в члены
+constitution - Устав Просветительского Общественного Объединения "Открытая лаборатория технического творчества"
 
-found_meeting_minutes - протокол учредительного собрания
 
+```
+sudo aptitude install texlive-fonts-recommended texlive-lang-cyrillic
+
+git clone https://github.com/minsk-hackerspace/OO.git
+cd OO
+
+make
+```
 

@@ -3,7 +3,9 @@
 constitution - Устав Просветительского Общественного Объединения "Открытая лаборатория технического творчества"
 
 
+To get PDF run something like this:
 ```
+sudo pip install commonmark
 sudo aptitude install texlive-fonts-recommended texlive-lang-cyrillic
 
 git clone https://github.com/minsk-hackerspace/OO.git

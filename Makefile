@@ -6,12 +6,17 @@
 
 %.dvi: %.tex
 	latex $<
+	# generate pdf index
+	latex $<
 
-SRC := $(wildcard *.tex)
+%.tex: %.md md2tex.py md2tex/* 
+	./md2tex.py < $< > $@
 
-all: $(SRC:.tex=.pdf)
+SRC := constitution.md
+
+all: $(SRC:.md=.pdf) $(SRC:.md=.tex)
 
 clean:
-	rm -f *.pdf *.log *.aux *.dvi *.ps *.out
+	rm -f *.pdf *.log *.aux *.dvi *.ps *.out *.tex constitution.tex
 
 remake: clean all

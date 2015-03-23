@@ -1,0 +1,71 @@
+\documentclass[a4paper,fontsize=14pt,titlepage]{scrartcl}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage[left=3cm,top=2cm,right=1.7cm,bottom=2cm,nohead,nofoot]{geometry}
+\usepackage[font={small}]{caption}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+
+\setlist{nolistsep}
+%\setlist[1]{\labelindent=\parindent}
+%\setlist[itemize]{leftmargin=*}
+\setlist[itemize,1]{label=---}
+
+\setkomafont{section}{\normalfont\bfseries\centering}
+\setkomafont{paragraph}{\normalfont}
+\setkomafont{subparagraph}{\normalfont}
+\setkomafont{title}{\rmfamily\bfseries\huge}
+
+\newcommand{\longpage}{\enlargethispage{\baselineskip}}
+\newcommand{\shortpage}{\enlargethispage{-\baselineskip}}
+
+% deep magic follows, don't touch it!
+\makeatletter
+\@newctr{paragraph}[section]
+\@newctr{subparagraph}[paragraph]
+\newenvironment{numberedpars}{%
+  \addtocounter{secnumdepth}{1}
+  \renewcommand\theparagraph{\arabic{section}.\arabic{paragraph}.}
+  \renewcommand\@seccntformat[1]
+  {\expandafter\ifx\csname##1\endcsname\paragraph\csname
+  the##1\endcsname\else\csname the##1\endcsname\fi}
+  \def\paragraph{\par\addvspace{3.25ex \@plus1ex \@minus.2ex}{\raggedsection\normalfont\sectfont\nobreak\size@paragraph\refstepcounter{paragraph}\@seccntformat{paragraph}}\,}
+  \let\old@par=\par
+  \def\new@par{\let\par=\old@par\paragraph{}\let\par=\new@par}
+  \let\par=\new@par
+  \par
+}{
+  \addtocounter{secnumdepth}{-1}
+}
+\newenvironment{numberedsubpars}{%
+  \addtocounter{secnumdepth}{1}
+  \renewcommand\thesubparagraph{\arabic{section}.\arabic{paragraph}.\arabic{subparagraph}.}
+  \renewcommand\@seccntformat[1]
+  {\expandafter\ifx\csname##1\endcsname\subparagraph\csname
+  the##1\endcsname\else\csname the##1\endcsname\fi}
+  \def\subparagraph{\par\addvspace{3.25ex \@plus1ex \@minus .2ex}{\raggedsection\normalfont\sectfont\nobreak\size@paragraph\refstepcounter{subparagraph}\@seccntformat{subparagraph}}\,}
+  \let\old@@par=\par
+  \def\new@@par{\let\par=\old@par\subparagraph{}\let\par=\new@@par}
+  \let\par=\new@@par
+  \par
+}{
+  \addtocounter{secnumdepth}{-1}
+  \let\par=\old@@par
+}
+
+\def\emph{\textbf}
+
+\renewcommand\thesection{\arabic{section}.}
+\let\@@@section=\section
+% \renewcommand\section[1]{\@@@section{\uppercase{#1}}}
+% end of magic
+
+\makeatother
+
+\sloppy
